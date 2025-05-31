@@ -5,11 +5,26 @@
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Font Family */
+  --font-lato: var(--font-lato);
+
+  /* Breakpoints */
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 576px;
+  --breakpoint-lg: 768px;
+  --breakpoint-xl: 1024px;
+  --breakpoint-2xl: 1280px;
+  --breakpoint-3xl: 1520px;
+}
+
+body {
+  @apply font-lato bg-background text-foreground;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,10 +32,4 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
