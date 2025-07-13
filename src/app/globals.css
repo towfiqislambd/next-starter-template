@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary-green: #63be60;
+  --color-secondary-blue: #0184ff;
+
+  /* Font Family */
+  --font-poppins: var(--font-poppins);
+
+  /* Breakpoints */
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 576px;
+  --breakpoint-lg: 768px;
+  --breakpoint-xl: 1024px;
+  --breakpoint-2xl: 1280px;
+  --breakpoint-3xl: 1520px;
+}
+
+body {
+  @apply font-poppins;
+}
+
+/* Custom CSS */
