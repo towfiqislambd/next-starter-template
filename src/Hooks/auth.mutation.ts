@@ -3,6 +3,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { GetUserDataFunc, LoginFunc } from "./auth.api";
 import useAuth from "./useAuth";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 // get user data:
 export const useGetUserData = (token: any) => {
@@ -16,7 +17,9 @@ export const useGetUserData = (token: any) => {
 
 // Login:
 export const useLogin = () => {
+  const router = useRouter();
   const { setToken } = useAuth();
+
   return useMutation({
     mutationKey: ["login"],
     mutationFn: payload => LoginFunc(payload),
@@ -26,6 +29,7 @@ export const useLogin = () => {
         if (data?.data?.token) {
           setToken(data?.data?.token);
         }
+        router.push("/dashboard");
       }
     },
     onError: (err: any) => {
