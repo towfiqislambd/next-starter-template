@@ -17,11 +17,10 @@ export const useGetUserData = (token: any) => {
 // Login:
 export const useLogin = () => {
   const { setToken } = useAuth();
-
   return useMutation({
     mutationKey: ["login"],
     mutationFn: payload => LoginFunc(payload),
-    onSuccess: (data) => {
+    onSuccess: data => {
       toast.success("Login Successful");
       if (data?.success) {
         if (data?.data?.token) {

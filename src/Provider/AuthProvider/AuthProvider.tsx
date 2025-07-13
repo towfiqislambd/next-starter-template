@@ -27,17 +27,14 @@ export default function AuthProvider({
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken, clearToken] = useLocalStorage("token", null);
-
   const { data: userData, isLoading: loadingUserData } = useGetUserData(token);
 
-  // Sync user data when token changes
   useEffect(() => {
     if (!token) {
       setUser(null);
       setLoading(false);
       return;
     }
-
     setLoading(loadingUserData);
 
     if (userData?.data) {

@@ -1,7 +1,7 @@
 # Next JS Startup Template (V-15)
 
 
-## Installation Guidance: `npx create-next-app@latest`
+## Installation: `npx create-next-app@latest`
 
 - What is your project named? (Write Project Name)
 - Would you like to use TypeScript - Yes
@@ -18,6 +18,7 @@
 - `npm run dev` (Run local version)
 - `npm run build` (Create build version)
 - `npm start` (Run build version)
+- Make a `.env.local` file in root path and apply `NEXT_PUBLIC_SITE_URL=https://yourdomain.com`
 
 
 ## Used Packages:

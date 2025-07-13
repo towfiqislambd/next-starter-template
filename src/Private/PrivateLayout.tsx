@@ -1,7 +1,7 @@
 "use client";
+import React from "react";
 import useAuth from "@/Hooks/useAuth";
 import { useRouter } from "next/navigation";
-import React from "react";
 
 const PrivateLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
