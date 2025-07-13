@@ -7,6 +7,7 @@ import PrivateLayout from "@/Private/PrivateLayout";
 const menuItems = [
   { label: "Dashboard", href: "/dashboard" },
   { label: "Settings", href: "/dashboard/settings" },
+  { label: "Go to home", href: "/" },
 ];
 
 export default function DashboardLayout({

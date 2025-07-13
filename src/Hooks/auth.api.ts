@@ -12,3 +12,9 @@ export const LoginFunc = async (payload: any) => {
   const { data } = await axiosPublic.post("/api/users/login", payload);
   return data;
 };
+
+// register:
+export const RegisterFunc = async (payload: any) => {
+  const { data } = await axiosPublic.post("/api/users/register", payload);
+  return data?.data;
+};
