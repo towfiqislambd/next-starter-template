@@ -27,3 +27,8 @@
 - axios
 - tanstack query
 - react hot toast
+
+
+## Tech Stack:
+- TypeScript
+- Next
