@@ -1,8 +1,3 @@
-// lib/localStorage.ts
-
-/**
- * Safely saves data to localStorage
- */
 export function setItem(key: string, value: string) {
   try {
     window.localStorage.setItem(key, value);
@@ -11,10 +6,11 @@ export function setItem(key: string, value: string) {
   }
 }
 
-/**
- * Safely retrieves data from localStorage
- */
 export function getItem(key: string): string | undefined {
+  if (typeof window === "undefined") {
+    return undefined;
+  }
+
   try {
     const data = window.localStorage.getItem(key);
     return data ?? undefined;
@@ -24,9 +20,7 @@ export function getItem(key: string): string | undefined {
   }
 }
 
-/**
- * Safely removes data from localStorage
- */
+
 export function removeItem(key: string) {
   try {
     window.localStorage.removeItem(key);

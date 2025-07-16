@@ -17,6 +17,7 @@ const PrivateLayout = ({ children }: { children: React.ReactNode }) => {
     return children;
   } else {
     router.push("/auth/login");
+    return null;
   }
 };
 

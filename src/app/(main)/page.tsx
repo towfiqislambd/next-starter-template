@@ -1,6 +1,6 @@
 import Container from "@/Components/Common/Container";
 
-const page = () => {
+const Page = () => {
   return (
     <main className="grid place-items-center h-[87vh] bg-gray-900 text-white">
       <Container>
@@ -12,4 +12,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

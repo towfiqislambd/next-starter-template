@@ -23,3 +23,11 @@ body {
 }
 
 /* Custom CSS */
+
+.section_title {
+  @apply text-xl;
+}
+
+.section_description {
+  @apply text-base;
+}
