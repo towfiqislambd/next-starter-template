@@ -24,7 +24,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
       <div className="absolute inset-0" onClick={onClose}></div>
       <div className="relative z-10 w-full max-w-lg max-h-[calc(100vh-50px)] overflow-y-auto p-5 bg-white rounded shadow-lg">
         {/* Modal Content */}
-        <p className="text-black text-lg font-medium"> Modal Content</p>
+        <p className="text-black text-lg font-medium">Modal Content</p>
         {children}
 
         {/* Close btn */}
