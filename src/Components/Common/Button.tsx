@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 type ButtonProps = {
   text: string;
-  className: string;
+  className?: string;
   animation?: boolean;
   onClick?: () => void;
   type?: "reset" | "submit";
@@ -15,8 +15,8 @@ const Button: React.FC<ButtonProps> = ({
   text,
   onClick,
   className,
-  animation,
-  variant,
+  animation = true,
+  variant = "primary_btn",
 }) => {
   return (
     <button
@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
       data-aos={animation ? "fade-up" : undefined}
       className={cn(
         "text-black text-lg font-bold",
-        variant ? "text-red-500" : "text-blue-500",
+        variant === "primary_btn" ? "text-red-500" : "text-blue-500",
         className
       )}
     >
