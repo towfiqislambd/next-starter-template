@@ -24,8 +24,9 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       data-aos={animation ? "fade-up" : undefined}
       className={cn(
-        "text-black text-lg font-bold",
-        variant === "primary_btn" ? "text-red-500" : "text-blue-500",
+        "text-black text-lg font-bold", // Default/Common Class
+        variant === "primary_btn" && "text-red-500",
+        variant === "secondary_btn" && "text-green-500",
         className
       )}
     >
