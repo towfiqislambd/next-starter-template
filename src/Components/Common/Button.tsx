@@ -17,6 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
   animation = true,
   variant = "primary_btn",
+  ...props
 }) => {
   return (
     <button
@@ -29,6 +30,7 @@ const Button: React.FC<ButtonProps> = ({
         variant === "secondary_btn" && "text-green-500",
         className
       )}
+      {...props}
     >
       {text}
     </button>

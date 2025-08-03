@@ -7,11 +7,17 @@ type ParagraphProps = {
   animation?: boolean;
 };
 
-const Paragraph = ({ text, className, animation = true }: ParagraphProps) => {
+const Paragraph = ({
+  text,
+  className,
+  animation = true,
+  ...props
+}: ParagraphProps) => {
   return (
     <p
       data-aos={animation ? "fade-up" : undefined}
       className={cn("default-design", className)}
+      {...props}
     >
       {text}
     </p>

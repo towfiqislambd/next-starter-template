@@ -13,12 +13,14 @@ const Heading: React.FC<HeadingProps> = ({
   className,
   Variant = "h3",
   animation = true,
+  ...props
 }) => {
   const Tag = Variant;
   return (
     <Tag
       data-aos={animation ? "fade-up" : undefined}
       className={cn("text-black text-2xl font-bold", className)}
+      {...props}
     >
       {text}
     </Tag>
