@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import AosProvider from "@/Provider/AosProvider/AosProvider";
-import UseSiteSettings from "@/Components/UseSiteSettings/UseSiteSettings";
 import QueryProvider from "@/Provider/QueryProvider/QueryProvider";
 import AuthProvider from "@/Provider/AuthProvider/AuthProvider";
+import UseSiteSettings from "@/Hooks/UseSiteSettings";
 
 // Fonts
 const poppins = Poppins({
@@ -36,7 +36,7 @@ export default function RootLayout({
           <AuthProvider>
             <AosProvider>
               <Toaster />
-              {/* <UseSiteSettings /> */}
+              <UseSiteSettings />
               {children}
             </AosProvider>
             <Toaster />

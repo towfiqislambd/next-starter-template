@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { useRegister } from "@/Hooks/auth.mutation";
 import Link from "next/link";
+import { useRegister } from "@/Hooks/api/auth_api";
 
 const Register = () => {
   const { mutateAsync: registrationMutation, isPending } = useRegister();
@@ -65,7 +65,13 @@ const Register = () => {
           </button>
 
           <p className="text-center">
-            Already have account? <Link href={"/auth/login"} className="hover:underline text-blue-500">Log In</Link>
+            Already have account?{" "}
+            <Link
+              href={"/auth/login"}
+              className="hover:underline text-blue-500"
+            >
+              Log In
+            </Link>
           </p>
         </form>
       </div>

@@ -1,31 +1,21 @@
 "use client";
-import { createContext, useEffect, useState } from "react";
-import { useGetUserData } from "@/Hooks/auth.mutation";
+import { useGetUserData } from "@/Hooks/api/auth_api";
 import useLocalStorage from "@/Hooks/useLocalStorage";
-
-interface User {
-  id: number;
-  name: string;
-  role: "user" | "admin";
-}
+import { createContext, ReactNode, useEffect, useState } from "react";
 
 interface AuthContextValue {
   loading: boolean;
-  user: User | null;
+  user: any;
   token: string | null;
   setToken: (token: string | null) => void;
   clearToken: () => void;
 }
 
-export const AuthContextProvider = createContext<AuthContextValue | null>(null);
+export const AuthContextProvider = createContext<AuthContextValue | any>(null);
 
-export default function AuthProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState<User | null>(null);
+export default function AuthProvider({ children }: { children: ReactNode }) {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [user, setUser] = useState<any>(null);
   const [token, setToken, clearToken] = useLocalStorage("token", null);
   const { data: userData, isLoading: loadingUserData } = useGetUserData(token);
 
@@ -35,15 +25,21 @@ export default function AuthProvider({
       setLoading(false);
       return;
     }
-    setLoading(loadingUserData);
 
-    if (userData?.data) {
-      setUser(userData.data);
+    if (loadingUserData) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+
+    if (userData?.status) {
+      setUser(userData?.data);
     } else {
       setUser(null);
     }
   }, [token, userData, loadingUserData]);
 
+  // values to pass:
   const contextValue: AuthContextValue = {
     loading,
     user,
