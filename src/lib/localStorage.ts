@@ -20,7 +20,6 @@ export function getItem(key: string): string | undefined {
   }
 }
 
-
 export function removeItem(key: string) {
   try {
     window.localStorage.removeItem(key);

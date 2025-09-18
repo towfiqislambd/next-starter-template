@@ -1,12 +1,12 @@
 "use client";
-import useApi from "@/Hooks/api/useApi";
-import useAuth from "@/Hooks/useAuth";
 import toast from "react-hot-toast";
+import useAuth from "@/Hooks/useAuth";
 import { useRouter } from "next/navigation";
+import useClientApi from "@/Hooks/useClientApi";
 
 // Get User Data
 export const useGetUserData = (token: any) => {
-  return useApi({
+  return useClientApi({
     method: "get",
     key: ["user", token],
     enabled: !!token,
@@ -21,7 +21,7 @@ export const useGetUserData = (token: any) => {
 // Registration
 export const useRegister = () => {
   const router = useRouter();
-  return useApi({
+  return useClientApi({
     method: "post",
     key: ["register"],
     endpoint: "/api/users/register",
@@ -42,7 +42,7 @@ export const useLogin = () => {
   const router = useRouter();
   const { setToken } = useAuth();
 
-  return useApi({
+  return useClientApi({
     method: "post",
     key: ["login"],
     endpoint: "/api/users/login",

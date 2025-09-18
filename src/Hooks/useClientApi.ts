@@ -17,7 +17,7 @@ type apiProps = {
   enabled?: boolean;
 };
 
-export default function useApi({
+export default function useClientApi({
   endpoint,
   method = "get",
   isPrivate = false,

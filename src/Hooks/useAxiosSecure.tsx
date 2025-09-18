@@ -26,6 +26,7 @@ axiosSecure.interceptors.response.use(
       (error.response.status === 401 || error.response.status === 403)
     ) {
       removeItem("token");
+      window.location.reload();
     }
     return Promise.reject(error);
   }
