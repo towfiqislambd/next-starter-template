@@ -9,6 +9,7 @@ type ButtonProps = {
   type?: "reset" | "submit";
   variant?: "primary_btn" | "secondary_btn";
 };
+
 const Button: React.FC<ButtonProps> = ({
   type,
   text,
